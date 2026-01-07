@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Training - GoodExcel</title>
+    <title>AI Training - Excel</title>
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="style.css"> 
 </head>
@@ -11,28 +11,25 @@
 <!----------------------------------------------------------------------------------------------->
 
 <body>
-    <p class="TitleHead">AI Training - GoodExcel</p>  
+    <p class="TitleHead">AI Training - Excel</p>  
 
     <!--- Inference -->
-    <p class="TitleList1Blue">Inference</p>
+    <p class="TitleList1Blue">Installations</p>
     <ol>
         <li>
 		<!--- Ollama -->	
 		<p class="TitleList2Blue">Ollama - inference locally on CPU (Llama, Qwen and more)</p>
         <ol>
- 			<li>
-			<p><a href="https://www.youtube.com/watch?v=1xdneyn6zjw" target="_blank">Run New Llama 3.1 on Your Computer Privately in 10 minutes (Skill Leap AI)</a></p>
-            <div class="preview-container">
-	        <iframe width="300" height="170" src="https://www.youtube.com/embed/1xdneyn6zjw" frameborder="0" allowfullscreen></iframe>
-            </div>
- 	     	<p>Ollama introduction.
-			<br>Run inference from the terminal or from the Ollama chat.
+ 			<li>Ollama Introduction and Installation Video
+			<p><a href="https://www.youtube.com/watch?v=1xdneyn6zjw" target="_blank">Link: Run New Llama 3.1 on Your Computer Privately in 10 minutes (Skill Leap AI)</a></p>
+  			<img src="images/OllamaInstallSite.png" alt="Python path" width="300" style="border: 2px solid black;">
+			<p>Run inference from the terminal or from the Ollama chat.
             <br>Note - the new Ollama installation also installs Ollama Chat, so you don't need to install Docker and so - view the video upto 8:35 only,
-            <br> (unless you want to upload files to the model)</p>
+            <br> (unless you want to upload files to the model).</p>
  		    </li>
 
- 			<li>
-     		<p><a href="https://ollama.com/" target="_blank">Run Ollama</a></p>
+ 			<li>Ollama Models
+     		<p><a href="https://ollama.com/" target="_blank">Link: Run Ollama</a></p>
   			<img src="images/Ollama.png" alt="Python path" width="300" style="border: 2px solid black;">
   	     	<p>Go to Ollama. </p>
 
@@ -54,8 +51,10 @@
   			<img src="images/OllamaDownloadModel4.png" alt="Python path" width="600" style="border: 2px solid black;">
   	     	<p>Paste and run.
 			<br>Note that in order to run it from the application you need to close and reopen it.</p>
-
-   			<img src="images/OllamaCPU40B.png" alt="Python path" width="600" style="border: 2px solid black;">
+			</li>
+			
+			<li>Ollama running
+   			<p></p><img src="images/OllamaCPU40B.png" alt="Python path" width="600" style="border: 2px solid black;"></p>
         	<p>Note - if you try a model that is too big for your computer, like 40B in this example, this is what you get.</p>
 
 			<img src="images/OllamaMistral24B.png" alt="Python path" width="600" style="border: 2px solid black;">
@@ -67,9 +66,63 @@
         </ol>
         </li>
 
+		
+
+
+		
         <li>
-		<!--- Python to Excel - xlwings -->
-		<p class="TitleList2Blue">Python to Excel - xlwings (working on an open Excel)</p>
+		<!--- Excel Ribbon -->
+		<p class="TitleList2Blue">Excel Ribbon</p>
+     	<ol>
+			<li	>Add Button to the Ribbon
+            <ol>
+                <li>
+                Save the Excel file as .xlsm (for now, can be changed to include other types)
+				</li>
+
+                <li>
+                Inside Excel Alt + F1, add:
+				<br><pre>Sub LaunchAIAgent()
+                <br>    RunPython "import AiExcel_main; AiExcel_main.main()"
+                <br>End Sub</pre>
+				</li>
+
+                <li>
+                Right click on the Ribbon and "Customize the Ribbon...",
+                <br>on the right "New Tab",
+                <br>"Rename..." the "New Tab" and the "New Group",
+                <br>on the left side change the drop down to "Macros",
+                <br>choose LaunchAIAgent and "Add >>" it to your new group,
+                <br>"Rename..." it and choose icon
+				</li>
+
+                <li>
+				When you open an Excel file from D: (DevDrive) you will get a "Security Risk Microsoft has blocked macros..."
+                <br>this happens only on D:.
+                <br>Right click on the Ribbon and "Customize the Ribbon...",
+                <br>Inside Excel File -> Options,
+                <br>click "Trust Center",
+                <br>click "Trust Center Settings...",
+                <br>click "Trusted Locations",
+                <br>click "Add new location...",
+                <br>"Browse..." to D:\Dev\AiExcelProject,
+                <br>check "Subfolders of this location are also trusted",
+                <br>"OK".
+				</li>
+			</ol>
+		    </li>
+		</ol>
+		</li>
+
+
+
+
+
+
+
+        <li>
+		<!--- Pyperclip -->
+		<p class="TitleList2Blue">Pyperclip</p>
      	<ol>
 			<li	>pyperclip
     		<p>pip install pyperclip</p>
@@ -77,7 +130,6 @@
 		    </li>
 		</ol>
 		</li>
-
     </ol>
  
 </body>

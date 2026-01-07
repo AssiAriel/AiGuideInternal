@@ -14,10 +14,7 @@
         li {
             margin: 10px 0;
         }
-        a {
-            text-decoration: none;
-            color: #007bff;
-        }
+        /* Links style */
         a:hover {
             text-decoration: underline;
         }
@@ -33,7 +30,7 @@
             color: black;
         }
         
-	    /* Titels style */
+	    /* Titles style */
         .TitleHead {
             font-size: 32px;
             color: rgb(45, 100, 232);
@@ -48,8 +45,7 @@
 		}
         .TitleList2Blue {
             font-size: 18px;
-            color: rgb(45, 100, 232);
-            text-decoration: underline;
+            color: rgb(20, 51, 223)
 		}
  
         /* Videos preview style */
