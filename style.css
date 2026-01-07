@@ -25,11 +25,14 @@
             margin-top: 7px;
             color: black;
         }
-	    ol li {
+	    ol > li {
             margin-bottom: 20px;
 			color: blue;
         }
- 
+         ol ol ol > li {
+            color: black;
+        }
+        
 	    /* Titels style */
         .TitleHead {
             font-size: 32px;
