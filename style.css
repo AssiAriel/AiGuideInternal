@@ -1,0 +1,87 @@
+	    /* Body and lists style */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        p {
+            margin-top: 7px;
+            color: black;
+        }
+	    ol li {
+            margin-bottom: 20px;
+			color: blue;
+        }
+ 
+	    /* Titels style */
+        .TitleHead {
+            font-size: 32px;
+            color: rgb(45, 100, 232);
+            text-decoration: underline;
+		}
+    	.TitleList1Blue {
+            font-size: 24px;
+            color: rgb(45, 100, 232);
+            text-decoration: underline;
+		    margin-top: 40px;
+		    margin-bottom: 10px;
+		}
+        .TitleList2Blue {
+            font-size: 18px;
+            color: rgb(45, 100, 232);
+            text-decoration: underline;
+		}
+ 
+        /* Videos preview style */
+        .video-container li a {
+            display: block;
+            margin-bottom: 8px;
+            list-style: decimal;
+            }
+
+        .preview-container a {
+            display: block;
+            font-weight: bold;
+            color: #0066cc;
+            margin-bottom: 8px;
+            text-decoration: none;
+        }
+		
+        /* Sites preview style */
+        .iframe-wrapper {
+            width: 300px; /* Preview box size */
+            height: 170px;
+            overflow: hidden; /* Hide any overflow */
+            position: relative;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .iframe-wrapper iframe {
+            width: 1000px; /* Set iframe larger than the preview container */
+            height: 800px; /* Adjust based on the actual website size */
+            transform: scale(0.3); /* Scale down to fit within the small window */
+            transform-origin: top left; /* Keep the scaling from top-left */
+            position: absolute; /* Position the iframe within the container */
+            top: 0;
+            left: 0;
+            border: none;
+            pointer-events: none; /* Makes the iframe non-interactive */
+            overflow: hidden; /* Hide overflow */
+        }

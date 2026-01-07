@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Training - Workstation</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+
+<!----------------------------------------------------------------------------------------------->
+
+<body>
+    <p class="TitleHead">AI Training - Workstation</p>  
+
+    <!--- Workstation Installation and Optimization -->
+    <p class="TitleList1Blue">Workstation Installation and Optimization</p>
+	<p>Workstation PC installation and configurations to bring to better performance and stability.
+	<br>This is just the list of things done on this specific Workstation - further work can be done to further improve performance,
+	<br>while keeping in mind stability since LLM training requires a long run with high stress.
+	<br>Note that not everything is relevant for every PC, so just use it as a guidance for what to look for.
+	<br>(the specific PC that was installed here is listed at the end of this page).</p>
+    <ol>
+        <li>
+		<!--- BIOS and Drivers -->	
+		<p class="TitleList2Blue">BIOS and Drivers</p>
+		<p>On first run of the PC, prior to Windows installation.</p>
+        <ol>
+ 			<li> Check BIOS
+ 	     	<p>Enter the BIOS and check CPU temperature, RAM, DDR, fans, cooler pump.</p>
+ 		    </li>
+
+ 			<li> Update BIOS
+ 	     	<p>Update the BIOS.</p>
+ 		    </li>
+
+ 			<li> XMP
+ 	     	<p>Enable the XMP in the BIOS.
+			<br>Faster DDR will drop to default speed without it.</p>
+ 		    </li>
+
+ 			<li> CPU integrated GPU
+ 	     	<p>Set the CPU integrated GPU as the Display in the BIOS.
+			<br>We use the CPU integrated GPU for the  monitor (and keep the GPU card free for AI).</p>
+ 		    </li>
+
+ 			<li> Fans Power
+ 	     	<p>Set all the fans to PWN in the BIOS.</p>
+ 		    </li>
+
+ 			<li> Fans Curves
+			<p>In this PC there are 3 fans set to intake at the front, 3 fans set to exhaust at the top (cooler fans),
+			<br>one fan at the rear set to exhaust and 2 fans at the bottom set to intake.
+		    <br>There is an idea to set the rear and bottom fans to react to the GPU temperature instead of the CPU temperature.
+			<br>You can also set the fan speed reaction to temperature curve.
+			<br>It can be done in the BIOS or by getfancontrol app in windows.
+			<br>But - it wasn't simple, and it is risky and at the end the default setting worked perfectly, so I kept the default settings.</p>
+ 		    </li>
+		</ol>
+        </li>
+
+        <li>
+		<!--- Windows Installation -->	
+		<p class="TitleList2Blue">Windows Installation</p>
+        <ol>
+ 			<li> Windows
+            <ol>
+                <li>
+                Install Windows 11 Pro
+				</li>
+                <li>
+                Update Windows
+				</li>
+			</ol>
+			</li>
+
+ 			<li> Clean Windows
+            <ol>
+                <li>
+                Uninstall unnecessary preinstalled Apps
+				</li>
+                <li>
+                Disable in startup unnecessary apps or widgets etc..
+				</li>
+			</ol>
+ 		    </li>
+
+ 			<li> Device Driver
+ 	     	<p>Check the Device driver for warning sign on drivers.
+			<br>(Note - if you see a warning on the RAID controller then go to the Bios and disable VMD).
+			</p>
+
+ 		    </li>
+
+ 			<li> Motherboard Tool
+ 	     	<p>Don't install the motherboard update tool.
+			<br>It will run in the background or install redundant tools.</p>
+ 		    </li>
+
+ 			<li> Update Drivers
+ 	     	<p>Update the drivers - manually only the needed ones, according to the below order.</p>
+            <ol>
+                <li>
+                Intel Graphics Accelerator Driver
+				</li>
+                <li>
+                Intel Chipset Driver
+				</li>
+                <li>
+                Intel Management Engine Interface
+				</li>
+                <li>
+                Intel Serial IO Software
+				</li>
+                <li>
+                Realtek Lan driver
+				</li>
+                <li>
+                Realtek Audio driver
+				</li>
+			</ol>
+ 		    </li>
+        </ol>
+        </li>
+
+        <li>
+		<!--- Samsung Magician -->	
+		<p class="TitleList2Blue">Samsung Magician</p>
+        <ol>
+ 			<li> Inside Samsung Magician
+            <ol>
+                <li>
+                Update the SSD firmware
+				</li>
+                <li>
+                Set it to performance
+				</li>
+				<li>
+                Set Over Provisioning to 10%
+				</li>
+                <li>
+                Run benchmark
+				</li>
+			</ol>
+			</li>
+        </ol>
+        </li>
+
+        <li>
+		<!--- Nvidia App and Control Panel -->	
+		<p class="TitleList2Blue">Nvidia App and Control Panel</p>
+        <ol>
+ 			<li> Nvidia App
+ 	     	<p>Install Nvidia App.</p>
+ 		    </li>
+
+ 			<li> Studio Driver
+ 	     	<p>Inside Nvidia App install the Studio Driver not the Game Ready Driver.</p>
+ 		    </li>
+
+ 			<li> Nvidia power management mode
+ 	     	<p>Set Nvidia power management for performance - only for our running tools,
+			<br>set it for VSCode, Python, Ollama, and more if needed (so, it can be set only the tool is installed..).
+			<br>Right click on the Desktop and open NVIDIA Control Panel,
+			<br>go to "Manage 3D settings" -> "Program Settings tab" -> "Add",
+			<br>since they are installed on D: we need to "Browse" to D:\Tools\VSCode\Microsoft VS Code,
+			<br>choose code.exe,
+			<br>scroll down to "Power management mode" and set it to "Prefer maximum performance" and "Apply"</p>
+    	    <p><img src="images/NvidiaPower.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+ 		    </li>
+		</ol>
+        </li>
+
+		<li>
+		<!--- BIOS Settings for Nvidia -->	
+		<p class="TitleList2Blue">BIOS Settings for Nvidia</p>
+        <ol>
+ 			<li> Re-size BAR
+ 	     	<p>In the BIOS enable Re-size BAR.</p>
+ 		    </li>
+
+ 			<li> CSM
+ 	     	<p>In the BIOS, under Advanced Mode -> Boot, disable the CSM.</p>
+ 		    </li>
+
+ 			<li> Verify Re-size BAR
+ 	     	<p>To verify that Re-size BAR is enabled, right click on the Desktop and open NVIDIA Control Panel,
+			<br>on the bottom left open System Information, and look there for Resizable BAR - Yes.</p>
+ 		    </li>
+        </ol>
+        </li>
+
+
+		<li>
+		<!--- More BIOS Settings (due to benchmark)-->	
+		<p class="TitleList2Blue">More BIOS Settings (due to benchmark)</p>
+		<p>Actually I set these parameters after achieving poor results in the Multi Thread test in Cinebench 2026 (below).
+		<br>Setting them, especially the first one, made it jump to the expected results.</p>
+        <ol>
+ 			<li> IA CEP
+ 	     	<p>In the BIOS disable IA CEP.</p>
+ 		    </li>
+
+ 			<li> Package Power Limit
+ 	     	<p>In the BIOS set both Long Duration Package Power Limit and Short Duration Package Power Limit to 253.</p>
+ 		    </li>
+
+ 			<li> ASUS Performance Enhancement 3.0
+ 	     	<p>In the BIOS set "ASUS Performance Enhancement 3.0" to Enabled (90°C Limit).</p>
+ 		    </li>
+        </ol>
+        </li>
+
+		<li>
+		<!--- Benchmark -->	
+		<p class="TitleList2Blue">Benchmark</p>
+		<p>We already run Samsung Magician benchmark above. We run additional benchmarks here.
+		<br>Note that it looks sufficient so we don't need to run any more benchmarks.</p>
+        <ol>
+ 			<li> HWiNFO
+            <ol>
+                <li>
+                Download and install
+				</li>
+                <li>
+                Run - choose Sensors-only
+				</li>
+				<li>
+                Monitor CPU and GPU temperatures, fans and cooler speeds (and many more like power) 
+				</li>
+			</ol>
+			</li>
+
+ 			<li> Cinebench 2026
+ 	     	<p>Run the different tests there (especially GPU, single core and Multi Thread).
+			<br>Monitor the run with the tool above
+			<br>Compare the scores to other similar setups (for example on reddit thread "The new Cinebench 2026 benchmark").</p>
+ 		    </li>
+
+ 			<li> 3Dmark
+ 	     	<p>Inside 3DMark run Time Spy (you might need to look for it among other apps inside benchmark tab).</p>
+ 		    </li>
+
+ 			<li>Performance and Stability
+ 	     	<p>Note - this specific setup got to the expected scores in the benchmark tests,
+			<br>but more important is that it got to it without stretching too much,
+			<br>(CPU temperature didn't go over 67C and the fans at max around 1400-1700RPM).
+ 		    </li>
+        </ol>
+        </li>
+
+		<li>
+		<!--- More BIOS Settings-->	
+		<p class="TitleList2Blue">More BIOS Settings</p>
+        <ol>
+ 			<li> ASUS Armoury Crate
+ 	     	<p>This is the ASUS motherboard application.
+			<br>We didn't install it (see above), but it might still suggest or run in background.
+			<br>Disable it in the BIOS: Tool -> ASUS Armoury Crate.</p>
+ 		    </li>
+        </ol>
+        </li>
+
+		<li>
+		<!--- More Windows Settings -->	
+		<p class="TitleList2Blue">More Windows Settings</p>
+        <ol>
+ 			<li>No Antivirus
+ 	     	<p>Don't install No 3rd party Antivirus, use the built in WIndows Security,
+			<br>it is assumed ot be good enough and specifically it knows how to handle DevDrive (see below).</p>
+ 		    </li>
+
+ 			<li>Notifications
+ 	     	<p>System -> Notifications -> Additional settings uncheck all three.</p>
+ 		    </li>
+
+ 			<li>Hardware-accelerated GPU scheduling
+ 	     	<p>System -> Display -> Graphics -> Advanced graphics.. -> Hardware-accelerated GPU scheduling set to ON.</p>
+ 		    </li>
+
+ 			<li>Fast Startup
+ 	     	<p>Run Control Panel and go to Hardware and Sound -> Power Options,
+			<br>click "Choose what the power buttons do" on the left,
+			<br>click "Change settings that are currently unavailable",
+			<br>uncheck "Turn on fast startup",
+		    <br>click Save changes.</p>
+ 		    </li>
+			
+ 			<li>Power Plan
+ 	     	<p>Run Control Panel and go to Hardware and Sound -> Power Options,
+			<br>choose "Balanced",
+			<br>click "Change plan settings",
+			<br>click "Change advanced power settings",
+			<br>go to PCI Express -> Link State Power Management,
+			<br>set it to OFF,
+		    <br>Apply and OK.</p>
+ 		    </li>
+
+        </ol>
+        </li>
+
+		<li>
+		<!--- Additional not Settings-->	
+		<p class="TitleList2Blue">Additional not Settings</p>
+		<p>These are settings that I decide not to do, at least for now,
+		<br>Further optimizations can be done when needed.</p>
+        <ol>
+ 			<li>VBS and HVCI
+ 	     	<p>Disabling VBS and HVCI gives extra performance at the cost of security.
+			<br>Performance is important, but these will not make much difference since the major work of LLM Training is done on the GPU.
+		    <br>So for now they are kept enabled.
+			<br>Consider disabling them during training, or in a secured environment Workstation.</p>
+ 		    </li>
+
+ 			<li>ASUS GPU Tweak III / Overclocking
+ 	     	<p>Will make the GPU run faster but at the cost pf stability - that is wear of the system, might crash and (so been said) might cause running errors.
+			<br>Probably keep it disabled, at least for now.</p>
+ 		    </li>
+        </ol>
+        </li>
+    </ol>
+
+ <!----------------------------------------------------------------------------------------------->
+
+   <!--- Development Environment -->
+    <p class="TitleList1Blue">Development Environment</p>
+    <ol>
+		<li>
+		<!--- Dev Drive -->	
+		<p class="TitleList2Blue">Dev Drive</p>
+        <ol>
+ 			<li>Create Dev Drive
+ 	     	<p>System -> Storage,
+			<br>click "Advanced storage settings",
+			<br>click "Disks & volumes",
+			<br>click "Create Dev Drive",
+			<br>Choose "Create new VHD",
+			<br>Name it "Development",
+			<br>set the location to "C:\Volumes",
+			<br>set size to 200,
+			<br>choose "VHDX",
+			<br>choose "Dynamically expending".</p>
+ 		    </li>
+
+ 			<li> Verify that it is Trusted
+ 	     	<p>Open Terminal as administrator, 
+			<br>type 'fsutil devdrv query D:",
+			<br>you can see that Windows Defender Filter is treating this drive as trusted,
+			<br>and now anything that is there will run faster.</p>
+    	    <p><img src="images/DevDrive1.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+			</li>
+
+ 			<li> The new Disk
+ 	     	<p>This Dev Drive is used for development, for all the code and tools (see below).</p>
+    	    <p><img src="images/DevDrive2.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+			</li>
+
+ 			<li> Folders
+ 	     	<p>This is the basic folders organization that i created there (for now).</p>
+    	    <p><img src="images/DevDrive3.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+			</li>
+        </ol>
+        </li>
+
+		<li>
+		<!--- Python -->	
+		<p class="TitleList2Blue">Python</p>
+        <ol>
+ 			<li>Install Python
+ 	     	<p>Choose the .exe file (not the .msix) so you can modify the drive letter,
+			<br>(for example: python-3.14.2-amd64.exe),
+			<br>mark "Add python.exe to PATH",
+			<br>choose "Customize installation",
+			<br>mark "Install Python 3.14 for all users",
+			<br>mark "Precompile standard library",
+			<br>set the path to "D:\Tools\Python\Python314".</p>
+ 		    </li>
+        </ol>
+        </li>
+
+		<li>
+		<!--- Visual Studio Code -->	
+		<p class="TitleList2Blue">Visual Studio Code</p>
+        <ol>
+ 			<li>Install Visual Studio Code
+ 	     	<p>Choose the System installer so you can choose a drive,
+			<br>(for example: VSCodeSetup-x64-1.107.1.exe),
+			<br>mark "Create a desktop icon",
+			<br>mark "Add open with code... " file and directory",
+			<br>mark "Precompile standard library".</p>
+ 		    </li>
+
+ 			<li>Install Extensions
+            <ol>
+                <li>
+                First create manually "D:\Tools\VSCode\Extensions" folder
+				</li>
+
+				<li>
+                Right click on the VS Code shortcut on the desktop -> Properties, change "Target" to: 
+				<br>"D:\Tools\VSCode\Microsoft VS Code\Code.exe" --extensions-dir "D:\Tools\VSCode\extensions",
+				<br>note that you added to the string that was already there the second part of extensions-dir,
+				<br>note that the quotations should be there<p>
+    	        <p><img src="images/VSCodeExt.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+				</li>
+
+				<li>
+                Inside VSCode go to "View -> Extensions",
+				<br>search for "Code Spell Checker" and install it (to begin with)
+				</li>
+
+				<li>
+                Make sure the extension is under your DevDrive "D:\Tools\VSCode\extensions"
+				</li>
+
+				<li>
+                Install "Python" extension,
+				<br>note that "Pylance", "Python Debugger" and "Python Environments" are added automatically
+				</li>
+			</ol>
+ 		    </li>
+
+ 			<li>GitHub Copilot on Visual Studio Code
+ 	     	<p>You can find it in "AI Training - Development Tools" page.</p>
+ 		    </li>
+        </ol>
+        </li>
+
+		<li>
+		<!--- Git -->	
+		<p class="TitleList2Blue">Git</p>
+        <ol>
+ 			<li>Git Repositories and GitHub
+ 	     	<p>I already had them ready at this point, so it is not covered here,
+	     	<br>you can find it in "AI Training - Development Tools" page.</p>
+			</p>
+ 		    </li>
+
+ 			<li>Install Git
+ 	     	<p>Install Git under D:\Tools\Git,
+			<br>choose "Use Visual Studio Code as Git's default editor".</p>
+ 		    </li>
+
+			<li>Signin
+ 	     	<p>Open Terminal,
+			<br>git config --global user.name "your git Name"
+		    <br>git config --global user.email "your email"</p>
+ 		    </li>
+
+			<li>Clone
+ 	     	<p>Open Terminal inside D:\Dev,
+			<br>git clone https://github.com/yourName/YourProject.git
+			<br>(now close and reopen VsCode).</p>
+ 		    </li>
+        </ol>
+        </li>
+
+		<li>
+		<!--- Ollama -->	
+		<p class="TitleList2Blue">Ollama</p>
+        <ol>
+ 			<li>Set Ollama to download models to our DevDrive
+ 	     	<p>Prior to installation,
+			<br>Go to "Edit the system environment variables" (search Windows start),
+			<br>click "Environment Variables...",
+			<br>click "New...",
+			<br>set "Variable name:" to OLLAMA_MODELS
+			<br>set "Variable value:" to D:\ModelManagers\Ollama\Models
+			<br>and OK.</p>
+   	        <p><img src="images/OllamaEnv1.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+ 		    </li>
+
+ 			<li>Install Ollama
+ 	     	<p>Download and install Ollama,
+		    <br>and don't forget to add it in Nvidia power mode (see above).</p>
+ 		    </li>
+
+ 			<li>Downloading Models and running
+ 	     	<p>You can find it in "AI Training - GoodExcel" page.</p>
+ 		    </li>
+        </ol>
+        </li>
+
+		<li>
+		<!--- Python Virtual Environment -->	
+		<p class="TitleList2Blue">Python Virtual Environment</p>
+        <ol>
+ 			<li> Create Virtual environment
+            <ol>
+                <li>
+                Open Terminal inside VSCode with your project open (it will open at your project location)
+				</li>
+
+                <li>
+                Type: python -m venv .venv
+				<br>(.venv folder is created inside the project folder)
+				</li>
+
+				<li>
+                Type: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+				</li>
+
+				<li>
+                Type: .\.venv\Scripts\Activate.ps1
+                <br>now you can see in the terminal that the line starts with green .venv
+   	            <p><img src="images/Venv1.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+				</li>
+			</ol>
+			</li>
+        </ol>
+        </li>
+
+		<li>
+		<!--- Python Packages -->	
+		<p class="TitleList2Blue">Python Packages</p>
+        <ol>
+ 			<li> Install Python packages
+			<p>Open Terminal inside VSCode (with the green .venv).</p>
+            <ol>
+				<li>
+                Type: pip install xlwings
+   	            <p><img src="images/PipXlwings.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+				</li>
+
+                <li>
+                Type: pip install ollama
+				</li>
+
+				<li>
+                Type: pip install customtkinter 
+				</li>
+
+				<li>
+                Type: pip install numpy 
+				</li>
+
+				<li>
+                VSCode looks for the packages in the usual place and mark them as problems.
+				<br>Search (Ctrl+Shift+P) for "Python: Select Interpreter",
+				<br>choose the .venv one.
+   	            <p><img src="images/VSCodeInterpreter.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+				</li>
+			</ol>
+			</li>
+        </ol>
+        </li>
+
+		<li>
+		<!--- Running -->	
+		<p class="TitleList2Blue">Running</p>
+        <ol>
+			<li>Terminal Run
+            <p>You can run it from the Terminal (for a quick test).</p>
+   	        <p><img src="images/TerminalRun1.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+			</li>
+
+ 			<li>GPU memory
+ 	     	<p>From the Terminal run: nvidia-smi
+			<br>with application running - and running Ollama,
+			<br>you can see that 4.9 GB of Ollama is loaded into the 16GB of the 5070 TU card.</p>
+   	        <p><img src="images/NvidiaMsi.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+ 		    </li>
+        </ol>
+        </li>
+    </ol>
+
+ <!----------------------------------------------------------------------------------------------->
+
+   <!--- This PC -->
+    <p class="TitleList1Blue">This PC</p>
+    <ol>
+		<li> The PC that was used in this list
+ 	   	<p>Intel Core i7-14700 up to 5.40GHz 33MB Cache Raptor Lake Tray
+        <br>ASUS PRIME B760-PLUS Intel LGA1700 B760 DDR5
+        <br>CORSAIR NAUTILUS 360 RS
+        <br>Kingston | FURY BEAST | 2x32GB | DDR5 | 5600MT/s | CL40
+        <br>Samsung 990 PRO NVMe M.2 2280 2TB SSD
+        <br>ASUS PRIME GeForce RTX 5070 Ti 16GB GDDR7 OC Edition
+        <br>Corsair RM850x 850W Gold 14cm Fan Fully Modular ATX
+        <br>Corsair 4000D RS FRAME ARGB Tempered Glass Mid Tower ATX
+        <br>Corsair RS120 (additional fans, 2 at the bottom. 1 at the rear)
+        <br>B-Guard HHLc</p>
+ 	    </li>
+    </ol>
+
+</body>
+</html>

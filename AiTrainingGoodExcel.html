@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Training - GoodExcel</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+
+<!----------------------------------------------------------------------------------------------->
+
+<body>
+    <p class="TitleHead">AI Training - GoodExcel</p>  
+
+    <!--- Inference -->
+    <p class="TitleList1Blue">Inference</p>
+    <ol>
+        <li>
+		<!--- Ollama -->	
+		<p class="TitleList2Blue">Ollama - inference locally on CPU (Llama, Qwen and more)</p>
+        <ol>
+ 			<li>
+			<p><a href="https://www.youtube.com/watch?v=1xdneyn6zjw" target="_blank">Run New Llama 3.1 on Your Computer Privately in 10 minutes (Skill Leap AI)</a></p>
+            <div class="preview-container">
+	        <iframe width="300" height="170" src="https://www.youtube.com/embed/1xdneyn6zjw" frameborder="0" allowfullscreen></iframe>
+            </div>
+ 	     	<p>Ollama introduction.
+			<br>Run inference from the terminal or from the Ollama chat.
+            <br>Note - the new Ollama installation also installs Ollama Chat, so you don't need to install Docker and so - view the video upto 8:35 only,
+            <br> (unless you want to upload files to the model)</p>
+ 		    </li>
+
+ 			<li>
+     		<p><a href="https://ollama.com/" target="_blank">Run Ollama</a></p>
+  			<img src="images/Ollama.png" alt="Python path" width="300" style="border: 2px solid black;">
+  	     	<p>Go to Ollama. </p>
+
+  			<img src="images/OllamaRun.png" alt="Python path" width="300" style="border: 2px solid black;">
+  	     	<p>Choose a Model and run. </p>
+
+  			<img src="images/OllamaModels.png" alt="Python path" width="300" style="border: 2px solid black;">
+  	     	<p>To download another Model. </p>
+
+  			<img src="images/OllamaDownloadModel1.png" alt="Python path" width="300" style="border: 2px solid black;">
+  	     	<p>Here. </p>
+
+  			<img src="images/OllamaDownloadModel2.png" alt="Python path" width="300" style="border: 2px solid black;">
+  	     	<p>And here. </p>
+
+  			<img src="images/OllamaDownloadModel3.png" alt="Python path" width="300" style="border: 2px solid black;">
+  	     	<p>Copy. </p>
+
+  			<img src="images/OllamaDownloadModel4.png" alt="Python path" width="600" style="border: 2px solid black;">
+  	     	<p>Paste and run.
+			<br>Note that in order to run it from the application you need to close and reopen it.</p>
+
+   			<img src="images/OllamaCPU40B.png" alt="Python path" width="600" style="border: 2px solid black;">
+        	<p>Note - if you try a model that is too big for your computer, like 40B in this example, this is what you get.</p>
+
+			<img src="images/OllamaMistral24B.png" alt="Python path" width="600" style="border: 2px solid black;">
+			<p>When I tried a 24B model on a CPU with 16G RAM I get a lot of Disk usage (I believe swap files):</p>
+
+			<img src="images/OllamaDeleteModel.png" alt="Python path" width="600" style="border: 2px solid black;">
+   	     	<p>You can remove models from the terminal by "ollama list" and then "ollama rm modelName". </p>
+            </li>
+        </ol>
+        </li>
+
+        <li>
+		<!--- Python to Excel - xlwings -->
+		<p class="TitleList2Blue">Python to Excel - xlwings (working on an open Excel)</p>
+     	<ol>
+			<li	>pyperclip
+    		<p>pip install pyperclip</p>
+     		<p>Just a copy tool needed sometimes.</p>
+		    </li>
+		</ol>
+		</li>
+
+    </ol>
+ 
+</body>
+</html>
