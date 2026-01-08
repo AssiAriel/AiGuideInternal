@@ -13,24 +13,125 @@
 <body>
     <p class="TitleHead">AI Guide - QLoRA</p>  
 
-    <!--- Inxxxxxxxxxxerence -->
-    <p class="TitleList1Blue">Insxxxxxxxxxxtallations</p>
+    <!--- Blueprint -->
+    <p class="TitleList1Blue">Blueprint</p>
     <ol>
-
-
         <li>
-		<!--- Pypexxxxxxxxrclip -->
-		<p class="TitleList2Blue">Pypexxxxxxxxxrclip</p>
+		<!--- General QLoRA Blueprint -->
+		<p class="TitleList2Blue">General QLoRA Blueprint</p>
      	<ol>
-			<li	>pypxxxxxerclip
-    		<p>pip xxxxxxxxxrclip</p>
-     		<p>Jusxxxxxxxxxxmetimes.</p>
-		    </li>
+ 			<li>List
+            <ol>
+                <li>
+                Workstation: i7-14700 64GB + RTX 5070 Ti 16GB
+				</li>
+                <li>
+                Model: Llama 3.1 (8B)
+				</li>
+                <li>
+                Dataset: (yahma/alpaca-cleaned)
+				</li>
+                <li>
+                Engine: Unsloth
+				</li>
+                <li>
+                OS: WSL2 (Ubuntu)
+				</li>
+                <li>
+                Code and environment file system: Linux ~/dev/AiLab
+				</li>
+                <li>
+                Models file system: Windows DevDrive D:\ModelManagers\HuggingFace\Models\
+				</li>
+                <li>
+                Also using :Hugging Face, bitsandbytes, triton, torch, transformers & peft
+				</li>
+			</ol>
+ 		    </li>
 		</ol>
 		</li>
-
-		
     </ol>
  
+ <!----------------------------------------------------------------------------------------------->
+
+    <!--- Linux -->
+    <p class="TitleList1Blue">Linux WSL2</p>
+    <ol>
+        <li>
+		<!--- Install WSL -->
+		<p class="TitleList2Blue">Install WSL</p>
+     	<ol>
+   			<li>Install
+ 	     	<p>Open Terminal as Administrator
+            <br>type: wsl --install
+            <br>when it is done restart your computer
+            <br>After restart, a black window will pop up asking for a Username and Password,
+            <br>(choose simple ones like: dev, dev). 
+            <br>If no window pops up, open Terminal and type: wsl
+            <br>if it start installing then good,
+            <br>if it says "...no installed distributions" then
+            <br>use 'wsl.exe --list --online' to list available distributions
+            <br>type: wsl --install -d Ubuntu-24.04
+            <br>If it looks like it stopped on something like "Create a default Unix user account: ssi"
+            <br>then actually, it is just a print over print.
+            <br>Backspace 3 times to remove the "ssi" string
+            <br>and enter your user name (dev)
+            <br>and then password.</p>
+ 		    </li>
+
+   			<li>Uninstall
+ 	     	<p>If you need to uninstall, open Terminal
+            <br>type: wsl --unregister Ubuntu-24.04
+            <br>type: wsl --install -d Ubuntu-24.04</p>
+ 		    </li>
+            
+            <li>Check
+            <ol>
+                <li>
+                Check that you got your user prompt on your computer
+				</li>
+
+                <li>
+                Type: nvidia-smi
+                <br>you should see the GPU card there
+           	    <p><img src="images/FirstLinuxRun.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+                </li>
+                
+                <li>
+                On windows Terminal, you can check that it is the right version 
+           	    <p><img src="images/LinuxVer.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+				</li>
+			</ol>
+ 		    </li>
+
+            <li>Symbolic Link
+            <ol>
+                <li>
+                Create a folder in WIndows D:\ModelManagers\HuggingFace\Models
+				</li>
+
+                <li>
+                Move from the Windows user folder to your Linux home folder
+                <br>type: cd ~
+                <br>type: ln -s /mnt/d/ModelManagers/HuggingFace/Models ~/Models
+                <br>To check type: cd ~/Models
+                <br>type: pwd
+           	    <p><img src="images/LinuxSymbolicLink.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+				</li>
+			</ol>
+ 		    </li>
+
+   			<li>Update Linux
+ 	     	<p>Type: sudo apt update && sudo apt upgrade -y</p>
+ 		    </li>
+
+
+
+		</ol>
+		</li>
+    </ol>
+
+
+
 </body>
 </html>
