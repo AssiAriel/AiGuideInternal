@@ -92,7 +92,7 @@
 				</li>
 
                 <li>
-                Type: nvidia-smi
+                Inside Ubuntu type: nvidia-smi
                 <br>you should see the GPU card there
            	    <p><img src="images/FirstLinuxRun.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
                 </li>
@@ -125,11 +125,77 @@
  	     	<p>Type: sudo apt update && sudo apt upgrade -y</p>
  		    </li>
 
-
-
+   			<li>Opening Ubuntu window
+ 	     	<p>Open Terminal and type: wsl
+            <br>or, open terminal and click the little dropdown arrow at the top and select Ubuntu 24.04
+            <br>or, right click the Desktop, 
+            <br>New > Shortcut
+            <br>location type: wsl.exe ~ -d Ubuntu-24.04
+            <br>name: "AiLab Workstation"</p>
+ 		    </li>
 		</ol>
 		</li>
     </ol>
+
+ <!----------------------------------------------------------------------------------------------->
+
+    <!--- Miniconda -->
+    <p class="TitleList1Blue">Miniconda</p>
+    <ol>
+        <li>
+		<!--- Install Miniconda -->
+		<p class="TitleList2Blue">Install Miniconda</p>
+     	<ol>
+   			<li>Download Installation
+ 	     	<p>Inside Ubuntu type: wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh</p>
+ 		    </li>
+
+   			<li>Install
+            <p>Type: bash Miniconda3-latest-Linux-x86_64.sh
+            <br>you get few "Yes" and "Enter"</p>
+ 		    </li>
+
+   			<li>Activate
+            <p>Type: source ~/.bashrc
+            <br>and you get "(base)" in the beginning of your prompt</p>
+ 		    </li>
+
+   			<li>Create a room
+            <p>Type: conda create --name ailab python=3.11 -y
+            <br>it might not run but give you a message that you need to accept terms,
+            <br>so you need to run the two lines it gives you there.
+            <br>This command creates a "room", an environment, called ailab
+            <br>where specific versions of installation (like Python) reside,
+            <br>note that this is not the latest Python version - but the latest stable one for Llama3.1</p>
+ 		    </li>
+
+   			<li>Enter the room
+            <p>Type: conda activate ailab
+            <br>and you get "(ailab)" in the beginning of your prompt</p>
+ 		    </li>
+
+            <li>Clean the  installation file
+            <p>Type: rm Miniconda3-latest-Linux-x86_64.sh</p>
+ 		    </li>
+		</ol>
+		</li>
+    </ol>
+
+
+11111            
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
