@@ -265,12 +265,10 @@
                 <br>check now
 				</li>
             </ol>
+            </li>
 		</ol>
 		</li>
     </ol>
-
-
-1111111
 
  <!----------------------------------------------------------------------------------------------->
 
@@ -334,13 +332,71 @@
                 Type: pip install --no-deps unsloth_zoo
 				</li>
             </ol>
+            </li>
 		</ol>
 		</li>
     </ol>
 
+ <!----------------------------------------------------------------------------------------------->
+
+    <!--- HuggingFace -->
+    <p class="TitleList1Blue">HuggingFace</p>
+    <ol>
+        <li>
+		<!--- HuggingFace Token -->
+		<p class="TitleList2Blue">HuggingFace Token</p>
+     	<ol>
+   			<li>Create Token
+            <ol>
+                <li>For Llama-3.1-8B on HuggingFace go to:
+                <p><a href="https://huggingface.co/meta-llama/Llama-3.1-8B" target="_blank">HuggingFace - Llama-3.1-8B</a></p>
+                </li>
+
+                <li>Sign in
+                <p>(or create an account)</p>
+                </li>
+
+                <li>Access Request
+                <p>Fill the Access Request form to get access to Llama-3.1-8B
+                <br>wait for it to be approved (it takes several minutes - you wil get a mail)</p>
+                </li>
+
+                <li>Create Token
+                <p>Go to Settings -> Access Tokens,
+                <br>go to "Read"Tab
+                <br>Give it a name (AssiWorkstationHFToken)
+                <br>"Create token" and copy it (you must copy it now)</p>
+   		        </li>
+            </ol>
+            </li>
+
+   			<li>Install HuggingFace
+ 	     	<p>Inside ailab type: 
+            <br>pip install huggingface_hub
+            <br>huggingface-cli login
+            <br>you will be asked for the token, copy it there (it doesn't show it, so make sure you type it and once)
+            <br>you are asked "Add token as git credential? (Y/n)" sey Y
+            <br>if you see "Login successful" than it passed - and yes, it looks like that...</p>
+            <p><img src="images/HuggingFaceCli.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+ 		    </li>
+
+   			<li>Download Llama
+ 	     	<p>Copy this code to a file:
+            <br><a href="download_llama.py" download>Download "download_llama.py" file</a>
+            <br>save the file as download_llama.py
+            <br>copy the file to ailab in Linux (like with did above),
+            <br>Inside ailab type: 
+            <br>python download_llama.py</p>
+ 		    </li>
+
+   			<li>Basic test Llama
 
 
-    
+
+		</ol>
+		</li>
+    </ol>
+
 
 
 
