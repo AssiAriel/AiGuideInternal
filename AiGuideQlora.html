@@ -23,7 +23,7 @@
  			<li>List
             <ol>
                 <li>
-                Workstation: i7-14700 64GB + RTX 5070 Ti 16GB
+                Workstation: i7-14700 64GB + RTX 5070 Ti 16GB + 990PRO NVMe 2TB
 				</li>
                 <li>
                 Model: Llama 3.1 (8B)
@@ -181,8 +181,47 @@
 		</li>
     </ol>
 
+ <!----------------------------------------------------------------------------------------------->
 
-11111            
+    <!--- PyTorch -->
+    <p class="TitleList1Blue">PyTorch</p>
+    <ol>
+        <li>
+		<!--- Install PyTorch -->
+		<p class="TitleList2Blue">Install PyTorch</p>
+     	<ol>
+   			<li>Install PyTorch
+            <p>From inside your ailab room "(ailab) dev@AssiWorkstation:~$"
+            <br>type: pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+            <br>you get many downloads and many colors...</p>
+ 		    </li>
+            
+   			<li>Verify that Python talks to the GPU card
+            <p>type: python
+            <br>type: import torch
+            <br>type: print(f"CUDA available: {torch.cuda.is_available()}")
+            <br>type: print(f"GPU Name: {torch.cuda.get_device_name(0)}")
+            <br>type: exit()
+            <br>and actually, it didn't work for me, this version doesn't support sm_120 which is the CUDA architecture of my card:
+           	 <p><img src="images/LinuxPytorchWarning.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+            <p>so  I need to install a newer version
+            <br>from inside ailab room "(ailab) dev@AssiWorkstation:~$"
+            <br>type: pip uninstall torch torchvision torchaudio -y
+            <br>type: pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128
+            <br>now it is better:
+            <p><img src="images/LinuxPytorchInstall.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+ 		    </li>
+
+   			<li>And verify some more
+            <p>Verify that (for my specific card) sm_120 is part of python
+            <br>verify that  Persistence-M is On
+           	 <p><img src="images/LinuxCheckSmi.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+ 		    </li>
+		</ol>
+		</li>
+    </ol>
+
+
 
 
 
