@@ -16,9 +16,9 @@
     <!--- Workstation Installation and Optimization -->
     <p class="TitleList1Blue">Workstation Installation and Optimization</p>
 	<p>Workstation PC installation and configurations to bring to better performance and stability.
-	<br>This is just the list of things done on this specific Workstation - further work can be done to further improve performance,
-	<br>while keeping in mind stability since LLM training requires a long run with high stress.
-	<br>Note that not everything is relevant for every PC, so just use it as a guidance for what to look for.
+	<br>Note that this list is far from being perfect - it is just the list of things I done on this specific Workstation to got it decent.
+	<br>Further work can be done to further improve performance, while keeping in mind stability since LLM training requires a long run with high stress.
+	<br>Note that not everything is relevant for every PC, so just use it as a guidance for things to look for.
 	<br>(the specific PC that was installed here is listed at the end of this page).</p>
     <ol>
         <li>
@@ -320,7 +320,7 @@
 			<br>since they are installed on D: we need to "Browse" to D:\Tools\VSCode\Microsoft VS Code,
 			<br>choose code.exe,
 			<br>scroll down to "Power management mode" and set it to "Prefer maximum performance" and "Apply"</p>
-    	    <p><img src="images/NvidiaPower.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+    	    <p><img src="images/NvidiaPower.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
  		    </li>
 
  			<li>Developer Mode
@@ -387,17 +387,17 @@
 			<br>type 'fsutil devdrv query D:",
 			<br>you can see that Windows Defender Filter is treating this drive as trusted,
 			<br>and now anything that is there will run faster.</p>
-    	    <p><img src="images/DevDrive1.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+    	    <p><img src="images/DevDrive1.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
 			</li>
 
  			<li> The new Disk
  	     	<p>This Dev Drive is used for development, for all the code and tools (see below).</p>
-    	    <p><img src="images/DevDrive2.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+    	    <p><img src="images/DevDrive2.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
 			</li>
 
  			<li> Folders
  	     	<p>This is the basic folders organization that i created there (for now).</p>
-    	    <p><img src="images/DevDrive3.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+    	    <p><img src="images/DevDrive3.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
 			</li>
         </ol>
         </li>
@@ -441,7 +441,7 @@
 				<br>"D:\Tools\VSCode\Microsoft VS Code\Code.exe" --extensions-dir "D:\Tools\VSCode\extensions",
 				<br>note that you added to the string that was already there the second part of extensions-dir,
 				<br>note that the quotations should be there<p>
-    	        <p><img src="images/VSCodeExt.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+    	        <p><img src="images/VSCodeExt.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
 				</li>
 
 				<li>
@@ -507,7 +507,7 @@
 			<br>set "Variable name:" to OLLAMA_MODELS
 			<br>set "Variable value:" to D:\ModelManagers\Ollama\Models
 			<br>and OK.</p>
-   	        <p><img src="images/OllamaEnv1.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+   	        <p><img src="images/OllamaEnv1.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
  		    </li>
 
  			<li>Install Ollama
@@ -543,7 +543,7 @@
 				<li>
                 Type: .\.venv\Scripts\Activate.ps1
                 <br>now you can see in the terminal that the line starts with green .venv
-   	            <p><img src="images/Venv1.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+   	            <p><img src="images/Venv1.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
 				</li>
 			</ol>
 			</li>
@@ -559,7 +559,7 @@
             <ol>
 				<li>
                 Type: pip install xlwings
-   	            <p><img src="images/PipXlwings.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+   	            <p><img src="images/PipXlwings.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
 				</li>
 
                 <li>
@@ -579,14 +579,14 @@
 				<br>make sure you are in green .venv or activate it,
                 <br>then type: pip freeze > requirements.txt
 				<br>do it every time you add a new package to your project (helpful when moving to other computers).
-   	            <p><img src="images/PipFreeze.png" alt="Numpy" width="400" style="border: 2px solid black;"></p> 
+   	            <p><img src="images/PipFreeze.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p> 
 				</li>
 
 				<li>
                 VSCode looks for the packages in the usual place and mark them as problems.
 				<br>Search (Ctrl+Shift+P) for "Python: Select Interpreter",
 				<br>choose the .venv one.
-   	            <p><img src="images/VSCodeInterpreter.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+   	            <p><img src="images/VSCodeInterpreter.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
 				</li>
 			</ol>
 			</li>
@@ -599,14 +599,14 @@
         <ol>
 			<li>Terminal Run
             <p>You can run it from the Terminal (for a quick test).</p>
-   	        <p><img src="images/TerminalRun1.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+   	        <p><img src="images/TerminalRun1.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
 			</li>
 
  			<li>GPU memory
  	     	<p>From the Terminal run: nvidia-smi
 			<br>with application running - and running Ollama,
 			<br>you can see that 4.9 GB of Ollama is loaded into the 16GB of the 5070 TU card.</p>
-   	        <p><img src="images/NvidiaMsi.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+   	        <p><img src="images/NvidiaMsi.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
  		    </li>
 
 			<li>Run on CUDA only
@@ -616,7 +616,7 @@
             <br>[Environment]::SetEnvironmentVariable("CUDA_VISIBLE_DEVICES", "0", "User")
 			<br>Note that you can also choose to do it for a specific app:
 			<br>[Environment]::SetEnvironmentVariable("OLLAMA_CUDA_DEVICES", "0", "User")</p>
-   	        <p><img src="images/CudaSelect.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+   	        <p><img src="images/CudaSelect.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
 			</li>
         </ol>
         </li>

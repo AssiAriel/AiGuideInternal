@@ -84,3 +84,24 @@
             pointer-events: none; /* Makes the iframe non-interactive */
             overflow: hidden; /* Hide overflow */
         }
+
+        /* The default look for your images */
+        .zoomable { 
+            transition: all 0.3s ease; 
+            cursor: zoom-in; 
+            width: 400px; 
+            border: 2px solid black; 
+            display: inline-block;
+        }
+
+        /* The 'Big' look when double-clicked an image*/
+        .full { 
+            position: fixed !important; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            width: 90vw !important; 
+            z-index: 1000; 
+            box-shadow: 0 0 100px rgba(0,0,0,0.8); 
+            cursor: zoom-out;
+        }        

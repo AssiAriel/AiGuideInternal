@@ -1,5 +1,8 @@
 {
     "cSpell.words": [
+        "msgspec",
+        "sentencepiece",
+        "torchao",
         "torchaudio",
         "torchvision"
     ]
