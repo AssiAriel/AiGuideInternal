@@ -16,10 +16,12 @@
     <!--- Installations -->
     <p class="TitleList1Blue">Installations</p>
     <ol>
+        <!--- L1 -->
         <li>
 		<!--- Ollama -->	
 		<p class="TitleList2Blue">Ollama - inference locally on CPU (Llama, Qwen and more)</p>
         <ol>
+            <!--- L2 -->
  			<li>Ollama Introduction and Installation Video
 			<p><a href="https://www.youtube.com/watch?v=1xdneyn6zjw" target="_blank">Link: Run New Llama 3.1 on Your Computer Privately in 10 minutes (Skill Leap AI)</a></p>
   			<img src="images/OllamaInstallSite.png" class="zoomable" ondblclick="this.classList.toggle('full')"">
@@ -28,6 +30,7 @@
             <br> (unless you want to upload files to the model).</p>
  		    </li>
 
+            <!--- L2 -->
  			<li>Ollama Models
      		<p><a href="https://ollama.com/" target="_blank">Link: Run Ollama</a></p>
   			<img src="images/Ollama.png" class="zoomable" ondblclick="this.classList.toggle('full')"">
@@ -53,6 +56,7 @@
 			<br>Note that in order to run it from the application you need to close and reopen it.</p>
 			</li>
 			
+            <!--- L2 -->
 			<li>Ollama running
    			<p></p><img src="images/OllamaCPU40B.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
         	<p>Note - if you try a model that is too big for your computer, like 40B in this example, this is what you get.</p>
@@ -66,16 +70,20 @@
         </ol>
         </li>
 	
+        <!--- L1 -->
         <li>
 		<!--- Excel Ribbon -->
 		<p class="TitleList2Blue">Excel Ribbon</p>
      	<ol>
+            <!--- L2 -->
 			<li	>Add Button to the Ribbon
             <ol>
+                <!--- L3 -->
                 <li>
                 Save the Excel file as .xlsm (for now, can be changed to include other types)
 				</li>
 
+                <!--- L3 -->
                 <li>
                 Inside Excel Alt + F1, add:
 				<br><pre>Sub LaunchAIExcel()
@@ -86,6 +94,7 @@
 				<br>for now, until installation is implemented.
 				</li>
 
+                <!--- L3 -->
                 <li>
                 Right click on the Ribbon and "Customize the Ribbon...",
                 <br>on the right "New Tab",
@@ -95,6 +104,7 @@
                 <br>"Rename..." it and choose icon
 				</li>
 
+                <!--- L3 -->
                 <li>
 				When you open an Excel file from D: (DevDrive) you will get a "Security Risk Microsoft has blocked macros..."
                 <br>this happens only on D:.
@@ -111,8 +121,10 @@
 			</ol>
 		    </li>
 
+            <!--- L2 -->
 			<li	>Connect RunPython to Excel
             <ol>
+                <!--- L3 -->
                 <li>
                 Open Terminal in D:\Dev\AiExcelProject,
 				<br>go to green .venv, run:
@@ -121,6 +133,7 @@
 				<br>a folder "temp_fix" was created.
 				</li>
 
+                <!--- L3 -->
                 <li>
                 Open the Excel file that is in new folder,
 				<br>press Alt + F11
@@ -128,6 +141,7 @@
                 <br>"Export File..." and "Save"
 				</li>
 
+                <!--- L3 -->
                 <li>
                 Open AI_Generated_Table.xlsm
                 <br>Alt + F11
@@ -139,23 +153,14 @@
 		    </li>
 		</ol>
 		</li>
+    </ol>
 
-
-
-
-
-
-        <li>
-		<!--- Pyperclip -->
-		<p class="TitleList2Blue">Pyperclip</p>
-     	<ol>
+<!-- 
 			<li	>pyperclip
     		<p>pip install pyperclip</p>
      		<p>Just a copy tool needed sometimes.</p>
 		    </li>
-		</ol>
-		</li>
-    </ol>
- 
+-->
+
 </body>
 </html>
