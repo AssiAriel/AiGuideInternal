@@ -16,35 +16,44 @@
     <!--- Blueprint -->
     <p class="TitleList1Blue">Blueprint</p>
     <ol>
+        <!--- L1 -->
         <li>
 		<!--- General QLoRA Blueprint -->
 		<p class="TitleList2Blue">General QLoRA Blueprint</p>
      	<ol>
+            <!--- L2 -->
  			<li>List
             <ol>
-                <li>
-                Workstation: i7-14700 64GB + RTX 5070 Ti 16GB + 990PRO NVMe 2TB
+                <!--- L3 -->
+                <li>Workstation: i7-14700 64GB + RTX 5070 Ti 16GB + 990PRO NVMe 2TB
 				</li>
-                <li>
-                Model: Llama 3.1 (8B)
+
+                <!--- L3 -->
+                <li>Model: Llama 3.1 (8B)
 				</li>
-                <li>
-                Dataset: (yahma/alpaca-cleaned)
+
+                <!--- L3 -->
+                <li>Dataset: (yahma/alpaca-cleaned)
 				</li>
-                <li>
-                Engine: Unsloth
+
+                <!--- L3 -->
+                <li>Engine: Unsloth
 				</li>
-                <li>
-                OS: WSL2 (Ubuntu)
+
+                <!--- L3 -->
+                <li>OS: WSL2 (Ubuntu)
 				</li>
-                <li>
-                Code and environment file system: Linux ~/dev/AiLab
+
+                <!--- L3 -->
+                <li>Code and environment file system: Linux ~/dev/AiLab
 				</li>
-                <li>
-                Models file system: Windows DevDrive D:\ModelManagers\HuggingFace\Models\
+
+                <!--- L3 -->
+                <li>Models file system: Windows DevDrive D:\ModelManagers\HuggingFace\Models\
 				</li>
-                <li>
-                Also using :Hugging Face, bitsandbytes, triton, torch, transformers & peft
+
+                <!--- L3 -->
+                <li>Also using :Hugging Face, bitsandbytes, triton, torch, transformers & peft
 				</li>
 			</ol>
  		    </li>
@@ -57,10 +66,12 @@
     <!--- Linux -->
     <p class="TitleList1Blue">Linux WSL2</p>
     <ol>
+        <!--- L1 -->
         <li>
 		<!--- Install WSL -->
 		<p class="TitleList2Blue">Install WSL</p>
      	<ol>
+            <!--- L2 -->
    			<li>Install
  	     	<p>Open Terminal as Administrator
             <br>type: wsl --install
@@ -79,39 +90,42 @@
             <br>and then password.</p>
  		    </li>
 
+            <!--- L2 -->
    			<li>Uninstall
  	     	<p>If you need to uninstall, open Terminal
             <br>type: wsl --unregister Ubuntu-24.04
             <br>type: wsl --install -d Ubuntu-24.04</p>
  		    </li>
             
+            <!--- L2 -->
             <li>Check
             <ol>
-                <li>
-                Check that you got your user prompt on your computer
+                <!--- L3 -->
+                <li>Check that you got your user prompt on your computer
 				</li>
 
-                <li>
-                Inside Ubuntu type: nvidia-smi
+                <!--- L3 -->
+                <li>Inside Ubuntu type: nvidia-smi
                 <br>you should see the GPU card there
            	    <p><img src="images/FirstLinuxRun.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
                 </li>
                 
-                <li>
-                On windows Terminal, you can check that it is the right version 
+                <!--- L3 -->
+                <li>On windows Terminal, you can check that it is the right version 
            	    <p><img src="images/LinuxVer.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
 				</li>
 			</ol>
  		    </li>
 
+            <!--- L2 -->
             <li>Symbolic Link
             <ol>
-                <li>
-                Create a folder in WIndows D:\ModelManagers\HuggingFace\Models
+                <!--- L3 -->
+                <li>Create a folder in WIndows D:\ModelManagers\HuggingFace\Models
 				</li>
 
-                <li>
-                Move from the Windows user folder to your Linux home folder
+                <!--- L3 -->
+                <li>Move from the Windows user folder to your Linux home folder
                 <br>type: cd ~
                 <br>type: ln -s /mnt/d/ModelManagers/HuggingFace/Models ~/Models
                 <br>To check type: cd ~/Models
@@ -121,10 +135,12 @@
 			</ol>
  		    </li>
 
+            <!--- L2 -->
    			<li>Update Linux
  	     	<p>Type: sudo apt update && sudo apt upgrade -y</p>
  		    </li>
 
+            <!--- L2 -->
    			<li>Opening Ubuntu window
  	     	<p>Open Terminal and type: wsl
             <br>or, open terminal and click the little dropdown arrow at the top and select Ubuntu 24.04
@@ -139,27 +155,32 @@
 
  <!----------------------------------------------------------------------------------------------->
 
-    <!--- Miniconda -->
-    <p class="TitleList1Blue">Miniconda</p>
+    <!--- Miniconda and Python -->
+    <p class="TitleList1Blue">Miniconda and Python</p>
     <ol>
+        <!--- L1 -->
         <li>
 		<!--- Install Miniconda -->
 		<p class="TitleList2Blue">Install Miniconda</p>
      	<ol>
+            <!--- L2 -->
    			<li>Download Installation
  	     	<p>Inside Ubuntu type: wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh</p>
  		    </li>
 
+            <!--- L2 -->
    			<li>Install
             <p>Type: bash Miniconda3-latest-Linux-x86_64.sh
             <br>you get few "Yes" and "Enter"</p>
  		    </li>
 
+            <!--- L2 -->
    			<li>Activate
             <p>Type: source ~/.bashrc
             <br>and you get "(base)" in the beginning of your prompt</p>
  		    </li>
 
+            <!--- L2 -->
    			<li>Create a room
             <p>Type: conda create --name ailab python=3.11 -y
             <br>it might not run but give you a message that you need to accept terms,
@@ -169,11 +190,13 @@
             <br>note that this is not the latest Python version - but the latest stable one for Llama3.1</p>
  		    </li>
 
+            <!--- L2 -->
    			<li>Enter the room
             <p>Type: conda activate ailab
             <br>and you get "(ailab)" in the beginning of your prompt</p>
  		    </li>
 
+            <!--- L2 -->
             <li>Clean the  installation file
             <p>Type: rm Miniconda3-latest-Linux-x86_64.sh</p>
  		    </li>
@@ -186,16 +209,19 @@
     <!--- PyTorch -->
     <p class="TitleList1Blue">PyTorch</p>
     <ol>
+        <!--- L1 -->
         <li>
 		<!--- Install PyTorch -->
 		<p class="TitleList2Blue">Install PyTorch</p>
      	<ol>
+            <!--- L2 -->
    			<li>Install PyTorch
             <p>From inside your ailab room "(ailab) dev@AssiWorkstation:~$"
             <br>type: pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
             <br>you get many downloads and many colors...</p>
  		    </li>
             
+            <!--- L2 -->
    			<li>Verify that Python talks to the GPU card
             <p>type: python
             <br>type: import torch
@@ -212,6 +238,7 @@
             <p><img src="images/LinuxPytorchInstall.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
  		    </li>
 
+            <!--- L2 -->
    			<li>And verify some more
             <p>Verify that (for my specific card) sm_120 is part of python
             <br>verify that  Persistence-M is On
@@ -226,11 +253,13 @@
     <!--- RAM -->
     <p class="TitleList1Blue">RAM</p>
     <ol>
+        <!--- L1 -->
         <li>
 		<!--- Allocate RAM -->
 		<p class="TitleList2Blue">Allocate RAM</p>
      	<ol>
-   			<li>Check RAM
+            <!--- L2 -->
+  			<li>Check RAM
             <p>Check how much RAM is allocated for Linux
             <br>type: free -h
             <p><img src="images/LinuxRam1.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
@@ -240,28 +269,29 @@
             <br>on the other hand I want to leave enough RAM for Windows to run WSL, for we to work parallel, and just to keep things calm...</p>
    		    </li>
 
+            <!--- L2 -->
    			<li>Allocate RAM
             <ol>
-                <li>
-                On windows, open Notepad,
+                <!--- L3 -->
+                <li>On windows, open Notepad,
                 <br>type this in plain text, only this:
                 <br>[wsl2]
                 <br>memory=48GB
                 <br>Save the file with this name in your user place C:\Users\Assi\.wslconfig
 				</li>
 
-                <li>
-                In the Ubuntu window,
+                <!--- L3 -->
+                <li>In the Ubuntu window,
                 <br> type:exit
 				</li>
 
-                <li>
-                In the Windows Terminal
+                <!--- L3 -->
+                <li>In the Windows Terminal
                 <br>type: wsl --shutdown
 				</li>
 
-                <li>
-                Open Ubuntu window again
+                <!--- L3 -->
+                <li>Open Ubuntu window again
                 <br>check now
 				</li>
             </ol>
@@ -275,30 +305,32 @@
     <!--- Unsloth -->
     <p class="TitleList1Blue">Unsloth</p>
     <ol>
+        <!--- L1 -->
         <li>
 		<!--- Install Unsloth -->
 		<p class="TitleList2Blue">Install Unsloth</p>
      	<ol>
+            <!--- L2 -->
    			<li>Install Unsloth
             <ol>
-                <li>
-                Use a "No Dependencies" installation,
+                <!--- L3 -->
+                <li>Use a "No Dependencies" installation,
                 <br>so that Unsloth wouldn't overwrite the Python version that we just installed with other "recommended" version.
                 <br>Type: "conda activate ailab" to enter ailab room
 				</li>
 
-                <li>
-                Type: pip install --no-deps "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
+                <!--- L3 -->
+                <li>Type: pip install --no-deps "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
                 <br>This installs Unsloth
 				</li>
 
-                <li>
-                Type: pip install --no-deps trl peft accelerate bitsandbytes
+                <!--- L3 -->
+                <li>Type: pip install --no-deps trl peft accelerate bitsandbytes
                 <br>This installs helper libraries
 				</li>
 
-                <li>
-                Type: pip install --upgrade transformers
+                <!--- L3 -->
+                <li>Type: pip install --upgrade transformers
                 <br>Update the Transformers,
                 <br>and we get error
               	<p><img src="images/UnslothInstallError1.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
@@ -307,18 +339,18 @@
                 <br>probably in time all these will not be needed as the new GPU wil be supported in the common packages.</p>
 				</li>
 
-                <li>
-                Type: pip install --no-deps datasets==3.0.0
+                <!--- L3 -->
+                <li>Type: pip install --no-deps datasets==3.0.0
 				</li>
 
-                <li>
-                Type: pip install psutil
+                <!--- L3 -->
+                <li>Type: pip install psutil
 				</li>
                 
-                <li>
-                When install passes run a test script:
+                <!--- L3 -->
+                <li>When install passes run a test script:
                 <br>copy this code to a file:
-                <br><a href="check_blackwell.py" download>Download "check_blackwell.py" file</a>
+                <br><a href="texts/check_blackwell.py" download>Download "check_blackwell.py" file</a>
                 <br>save the file as check_blackwell.py
                 <br>copy the file to ailab in Linux,
                 <br>one simple way is to type in ailab: "explorer.exe ." and a Windows folder opens for you to copy to,
@@ -328,8 +360,8 @@
                 <br>if you get errors just follow the messages you get.</p>
                </li>
 
-                <li>
-                Type: pip install --no-deps unsloth_zoo
+                <!--- L3 -->
+                <li>Type: pip install --no-deps unsloth_zoo
 				</li>
             </ol>
             </li>
@@ -342,25 +374,31 @@
     <!--- HuggingFace -->
     <p class="TitleList1Blue">HuggingFace</p>
     <ol>
+        <!--- L1 -->
         <li>
 		<!--- HuggingFace Token -->
 		<p class="TitleList2Blue">HuggingFace Token</p>
      	<ol>
+            <!--- L2 -->
    			<li>Create Token
             <ol>
+                <!--- L3 -->
                 <li>For Llama-3.1-8B on HuggingFace go to:
                 <p><a href="https://huggingface.co/meta-llama/Llama-3.1-8B" target="_blank">HuggingFace - Llama-3.1-8B</a></p>
                 </li>
 
+                <!--- L3 -->
                 <li>Sign in
                 <p>(or create an account)</p>
                 </li>
 
+                <!--- L3 -->
                 <li>Access Request
                 <p>Fill the Access Request form to get access to Llama-3.1-8B
                 <br>wait for it to be approved (it takes several minutes - you wil get a mail)</p>
                 </li>
 
+                <!--- L3 -->
                 <li>Create Token
                 <p>Go to Settings -> Access Tokens,
                 <br>go to "Read"Tab
@@ -370,6 +408,7 @@
             </ol>
             </li>
 
+            <!--- L2 -->
    			<li>Install HuggingFace
  	     	<p>Inside ailab type: 
             <br>pip install huggingface_hub
@@ -380,22 +419,51 @@
             <p><img src="images/HuggingFaceCli.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
  		    </li>
 
+            <!--- L2 -->
    			<li>Download Llama
  	     	<p>Copy this code to a file:
-            <br><a href="download_llama.py" download>Download "download_llama.py" file</a>
+            <br><a href="texts/download_llama.py" download>Download "download_llama.py" file</a>
             <br>save the file as download_llama.py
             <br>copy the file to ailab in Linux (like with did above),
             <br>Inside ailab type: 
             <br>python download_llama.py</p>
  		    </li>
-
-   			<li>Basic test Llama
-
-
-
 		</ol>
 		</li>
     </ol>
+
+ <!----------------------------------------------------------------------------------------------->
+
+    <!--- GNU Compiler (GCC) -->
+    <p class="TitleList1Blue">GNU Compiler (GCC)</p>
+    <ol>
+        <!--- L1 -->
+        <li>
+		<!--- HuggingFace Token -->
+		<p class="TitleList2Blue">GCC</p>
+     	<ol>
+            <!--- L2 -->
+   			<li>Install GCC
+ 	     	<p>Inside Ubuntu Terminal: 
+            <br>sudo apt update && sudo apt install build-essential -y
+            <br>enter your password - we defined "dev" above (password it doesn't show when you type)</p>
+            </li>
+
+            <!--- L2 -->
+   			<li>Verify GCC
+ 	     	<p>Inside Ubuntu Terminal: 
+            <br>gcc --version</p>
+            <p><img src="images/GccVer.png" alt="Numpy" width="400" style="border: 2px solid black;"></p>
+            </li>
+		</ol>
+		</li>
+    </ol>
+
+
+
+
+
+
 
 
 
