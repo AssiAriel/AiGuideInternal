@@ -29,11 +29,11 @@
 				</li>
 
                 <!--- L3 -->
-                <li>Model: Llama 3.1 (8B)
+                <li>Model: Llama 3.1 8B
 				</li>
 
                 <!--- L3 -->
-                <li>Dataset: Alpaca dataset
+                <li>Dataset: yahma/alpaca-cleaned dataset
 				</li>
 
                 <!--- L3 -->
@@ -461,8 +461,8 @@
 
  <!----------------------------------------------------------------------------------------------->
 
-    <!--- Verify Installation - run Llama -->
-    <p class="TitleList1Blue">Verify Installation - run Llama</p>
+    <!--- Verify Installation - run Llama inference -->
+    <p class="TitleList1Blue">Verify Installation - run Llama inference</p>
     <ol>
         <!--- L1 -->
         <li>
@@ -502,6 +502,41 @@
             <br>open another Terminal and type:
             <br>watch -n 1 nvidia-smi
             <p><img src="images/LlamaTestSmi.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
+ 		    </li>
+		</ol>
+		</li>
+    </ol>
+
+ <!----------------------------------------------------------------------------------------------->
+
+    <!--- QLoRA SFT Training Llama -->
+    <p class="TitleList1Blue">QLoRA SFT Training Llama</p>
+    <ol>
+        <!--- L1 -->
+        <li>
+		<!--- Run QLoRA on Llama -->
+		<p class="TitleList2Blue">Run QLoRA on Llama</p>
+        <p>Now, actually running SFT QLoRA to train  Llama 3.1 8B.</p>
+     	<ol>
+            <!--- L2 -->
+   			<li>Download the Llama model
+ 	     	<p>Copy this code to a file:
+            <br><a href="texts/download_llama.py" download>Download "download_llama.py" file</a>
+            <br>save the file as download_llama.py
+            <br>type in ailab: "explorer.exe ."
+            <br>copy the file to ailab in Linux,
+            <br>Inside ailab type: 
+            <br>python download_llama.py</p>
+ 		    </li>
+
+            <!--- L2 -->
+ 			<li>Run SFT on Llama
+ 	     	<p>Copy this code to a file:
+            <br><a href="texts/llama_first_train.py" download>Download "llama_first_train.py" file</a>
+            <br>save the file as llama_first_train.py
+            <br>copy the file to ailab in Linux,
+            <br>Inside ailab type: 
+            <br>python llama_first_train.py</p>
  		    </li>
 		</ol>
 		</li>
