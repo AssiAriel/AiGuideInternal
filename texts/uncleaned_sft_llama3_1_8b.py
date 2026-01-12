@@ -1,0 +1,140 @@
+import os
+os.environ["HF_HUB_OFFLINE"] = "1"
+os.environ["TRANSFORMERS_OFFLINE"] = "1"
+
+from unsloth import FastLanguageModel
+from datasets import load_from_disk
+from trl import SFTTrainer
+from transformers import TrainingArguments
+from datetime import datetime
+import torch
+
+# 1. Configuration & Paths
+model_path = "/mnt/d/ModelManagers/HuggingFace/Models"
+dataset_path = "/mnt/d/ModelManagers/Datasets/alpaca_cleaned"
+
+# 2. Load Model & Tokenizer
+print("\n⏳ Loading model - it takes several seconds ........\n")
+model, tokenizer = FastLanguageModel.from_pretrained(
+    model_name = model_path,
+    max_seq_length = 2048, # default = 2048 (higher uses more VRAM)
+    load_in_4bit = True,   # default = True
+)
+
+# 3. Add LoRA Adapters - The "Brain Surgery" variables
+model = FastLanguageModel.get_peft_model(
+    model,
+    r = 16,               # default = 16 (Higher = more capacity, but bigger files)
+    target_modules = ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
+    lora_alpha = 16,      # default = 16 (Usually matches 'r')
+    lora_dropout = 0,     # default = 0 (Good for stability)
+    bias = "none",        # default = "none"
+    use_gradient_checkpointing = "unsloth", # default = "unsloth"
+)
+
+# 4. Define the Alpaca Prompt Template
+alpaca_prompt = """Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+{}
+
+### Input:
+{}
+
+### Response:
+{}"""
+
+EOS_TOKEN = tokenizer.eos_token 
+
+def formatting_prompts_func(examples):
+    instructions = examples["instruction"]
+    inputs       = examples["input"]
+    outputs      = examples["output"]
+    texts = []
+    for instruction, input, output in zip(instructions, inputs, outputs):
+        text = alpaca_prompt.format(instruction, input, output) + EOS_TOKEN
+        texts.append(text)
+    return { "text" : texts, }
+
+# 5. Load and Map the Dataset
+dataset = load_from_disk(dataset_path)
+dataset = dataset.map(formatting_prompts_func, batched = True)
+
+# 6. Initialize Trainer - The "Exercise" variables
+trainer = SFTTrainer(
+    model = model,
+    tokenizer = tokenizer,
+    train_dataset = dataset,
+    dataset_text_field = "text",
+    max_seq_length = 2048, # default = 2048
+    args = TrainingArguments(
+        per_device_train_batch_size = 2,  # default = 2 (Higher = more VRAM used)
+        gradient_accumulation_steps = 4,  # default = 4 (Total Batch = size * steps)
+        warmup_steps = 5,                 # default = 5 (Initial 'slow start' steps)
+        max_steps = 2,                   # default = 60 (Total training duration)
+        learning_rate = 2e-4,             # default = 2e-4 (How fast it learns)
+        fp16 = not torch.cuda.is_bf16_supported(),
+        bf16 = torch.cuda.is_bf16_supported(),
+        logging_steps = 1,                # default = 1 (How often to print Loss)
+        optim = "adamw_8bit",             # default = "adamw_8bit"
+        weight_decay = 0.01,              # default = 0.01 (Prevents over-learning)
+        lr_scheduler_type = "linear",     # default = "linear"
+        seed = 3407,                      # default = 3407 (For repeatable results)
+        output_dir = "outputs",           # default = "outputs"
+    ),
+)
+
+# 7. Train!
+print("\n🚀 Starting Training...\n")
+trainer.train()
+
+# 8. Create a unique folder name with date and time
+# Format: sft_llama_2026-01-11_18-30
+timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
+save_folder = f"sft_llama3_1_8b_results/sft_llama_{timestamp}"
+
+# 9. Save the model adapters and tokenizer
+model.save_pretrained(save_folder)
+tokenizer.save_pretrained(save_folder)
+
+print(f"\n✅ Saved adapters and tokenizer to folder: {save_folder}")
+
+
+# 10. Immidiate Inference
+print("\n🔥 Training Finished. Switching to Inference Mode...")
+FastLanguageModel.for_inference(model) # This prepares the 'warm' model for talking
+
+from transformers import TextStreamer
+text_streamer = TextStreamer(tokenizer, skip_prompt=True)
+
+# UI Colors for the Chat
+C_USER = "\033[96m"  # Cyan
+C_AI = "\033[92m"    # Green
+C_RESET = "\033[0m"
+C_BOLD = "\033[1m"
+
+print(f"\n🚀 Chat with your NEW model! (Type 'exit' to finish)")
+while True:
+    user_prompt = input(f"\n{C_BOLD}{C_USER}👨‍💻 User:{C_RESET} ")
+    if user_prompt.lower() in ["exit", "quit"]:
+        break
+
+    # 1. Format the prompt
+    full_prompt = alpaca_prompt.format(user_prompt, "", "")
+    inputs = tokenizer([full_prompt], return_tensors = "pt").to("cuda")
+
+    # 2. Capture the raw output (removed the streamer)
+    outputs = model.generate(
+        **inputs, 
+        max_new_tokens = 256,
+        use_cache = True 
+    )
+
+    # 3. DECODE EVERYTHING (This shows you the full technical output)
+    # [0] takes the first (and only) result from the batch
+    # skip_special_tokens=False ensures you see the <|end_of_text|> token
+    decoded_output = tokenizer.batch_decode(outputs, skip_special_tokens=False)[0]
+
+    print(f"\n{C_BOLD}--- RAW DATA FROM THE BRAIN ---{C_RESET}")
+    print(decoded_output)
+    print(f"{C_BOLD}--- END OF RAW DATA ---{C_RESET}")
