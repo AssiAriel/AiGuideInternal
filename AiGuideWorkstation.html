@@ -15,11 +15,12 @@
 
     <!--- Workstation Installation and Optimization -->
     <p class="TitleList1Blue">Workstation Installation and Optimization</p>
-	<p>Workstation PC installation and configurations to bring to better performance and stability.
-	<br>Note that this list is far from being perfect - it is just the list of things I done on this specific Workstation to got it decent.
-	<br>Further work can be done to further improve performance, while keeping in mind stability since LLM training requires a long run with high stress.
+	<p>Workstation installation and configurations to bring to better performance and stability.
+	<br>Note that this list is far from being perfect (and even sometimes debatable),
+	<br>it is just a list of things that I done on this specific PC to get it to be decent.
+	<br>Further work can be done to further improve performance while keeping in mind stability since LLM training requires long runs with high stress.
 	<br>Note that not everything is relevant for every PC, so just use it as a guidance for things to look for.
-	<br>(the specific PC that was installed here is listed at the end of this page).</p>
+	<br>(the specific PC that was use here is listed at the end of this page).</p>
     <ol>
         <!--- L1 -->
         <li>
@@ -46,7 +47,7 @@
             <!--- L2 -->
  			<li>CPU integrated GPU
  	     	<p>Set the CPU integrated GPU as the Display in the BIOS.
-			<br>We use the CPU integrated GPU for the  monitor (and keep the GPU card free for AI).</p>
+			<br>We use the CPU integrated GPU for the  monitor (while keeping the GPU card free for AI).</p>
  		    </li>
 
             <!--- L2 -->
@@ -56,12 +57,12 @@
 
             <!--- L2 -->
  			<li>Fans Curves
-			<p>In this PC there are 3 fans set to intake at the front, 3 fans set to exhaust at the top (cooler fans),
+			<p>In this PC there are 3 fans set to intake at the front, 3 fans set to exhaust at the top (the CPU cooler fans),
 			<br>one fan at the rear set to exhaust and 2 fans at the bottom set to intake.
-		    <br>There is an idea to set the rear and bottom fans to react to the GPU temperature instead of the CPU temperature.
-			<br>You can also set the fan speed reaction to temperature curve.
+		    <br>There might be an advantage to set the rear and bottom fans to react to the GPU temperature instead of the CPU temperature.
+			<br>You can also set the fan speed steps reactions in the temperature curve.
 			<br>It can be done in the BIOS or by getfancontrol app in windows.
-			<br>But - it wasn't simple, and it is risky and at the end the default setting worked perfectly, so I kept the default settings.</p>
+			<br>But - it isn't simple, and it is risky and at the end the default setting worked very good for me, so I kept the default settings.</p>
  		    </li>
 		</ol>
         </li>
@@ -100,18 +101,18 @@
             <!--- L2 -->
  			<li>Device Driver
  	     	<p>Check the Device driver for warning sign on drivers.
-			<br>(Note - if you see a warning on the RAID controller then go to the Bios and disable VMD).</p>
+			<br>(Note - if you see a warning sign on the RAID controller then go to the BIOS and disable VMD).</p>
  		    </li>
 
             <!--- L2 -->
  			<li>Motherboard Tool
- 	     	<p>Don't install the motherboard update tool.
-			<br>It will run in the background or install redundant tools.</p>
+ 	     	<p>Don't install the (ASUS) motherboard update tool,
+			<br>it will run at the background or install redundant tools.</p>
  		    </li>
 
             <!--- L2 -->
  			<li>Update Drivers
- 	     	<p>Update the drivers - manually only the needed ones, according to the below order.</p>
+ 	     	<p>Update the drivers - manually, get them online from the (ASUS) motherboard site, only the needed ones, according to the below order.</p>
             <ol>
                 <!--- L3 -->
                 <li>Intel Graphics Accelerator Driver
@@ -137,6 +138,12 @@
 				<li>Realtek Audio driver
 				</li>
 			</ol>
+ 		    </li>
+
+            <!--- L2 -->
+ 			<li>No Antivirus
+ 	     	<p>Don't install any 3rd party Antivirus, use the built in WIndows Security,
+			<br>it is assumed ot be good enough and specifically it knows how to handle DevDrive (see below).</p>
  		    </li>
         </ol>
         </li>
@@ -181,7 +188,7 @@
 
             <!--- L2 -->
  			<li>Studio Driver
- 	     	<p>Inside Nvidia App install the Studio Driver not the Game Ready Driver.</p>
+ 	     	<p>Inside Nvidia App install the "Studio Driver" not the "Game Ready Driver".</p>
  		    </li>
 		</ol>
         </li>
@@ -245,7 +252,7 @@
 		<!--- Benchmark -->	
 		<p class="TitleList2Blue">Benchmark</p>
 		<p>We already run Samsung Magician benchmark above. We run additional benchmarks here.
-		<br>Note that it looks sufficient so we don't need to run any more benchmarks.</p>
+		<br>Note that these benchmarks look sufficient so we don't need to run any more benchmarks.</p>
         <ol>
             <!--- L2 -->
  			<li>HWiNFO
@@ -266,20 +273,20 @@
 
             <!--- L2 -->
  			<li>Cinebench 2026
- 	     	<p>Run the different tests there (especially GPU, single core and Multi Thread).
-			<br>Monitor the run with the tool above
+ 	     	<p>Run the different tests there (especially GPU, Single core and Multi Thread).
+			<br>Monitor the run with HWiNFO.
 			<br>Compare the scores to other similar setups (for example on reddit thread "The new Cinebench 2026 benchmark").</p>
  		    </li>
 
             <!--- L2 -->
  			<li>3DMark
- 	     	<p>Inside 3DMark run Time Spy (you might need to look for it among other apps inside benchmark tab).</p>
+ 	     	<p>Inside 3DMark run Time Spy (you need to look for it among other apps inside benchmark tab).</p>
  		    </li>
 
             <!--- L2 -->
  			<li>Performance and Stability
  	     	<p>Note - this specific setup got to the expected scores in the benchmark tests,
-			<br>but more important is that it got to it without stretching too much,
+			<br>but more important is that it got to it without stretching the system too much,
 			<br>(CPU temperature didn't go over 67C and the fans at max around 1400-1700RPM).
 			<br>Below is just the run of 3DMark on this workstation at this point, for reference and some color...
 			<p><img src="images/3DMark.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
@@ -302,25 +309,25 @@
 
             <!--- L2 -->
  			<li>Performance Preferences
- 	     	<p>In the BIOS set "Performance Preferences" to "Intel Default Settings"
-			<br>this is actually the default.</p>
+ 	     	<p>In the BIOS set "Performance Preferences" to "Intel Default Settings",
+			<br>which is actually the default.</p>
  		    </li>
 
             <!--- L2 -->
  			<li>Intel Default Settings
- 	     	<p>In the BIOS set "Intel Default Settings" to "Performance"
-			<br>this is actually the default.</p>
+ 	     	<p>In the BIOS set "Intel Default Settings" to "Performance",
+			<br>which is actually the default.</p>
  		    </li>
 
             <!--- L2 -->
  			<li>Performance Core Ratio
- 	     	<p>In the BIOS set "Performance Core Ratio" to "Auto"
-			<br>this is actually the default.</p>
+ 	     	<p>In the BIOS set "Performance Core Ratio" to "Auto",
+			<br>which is actually the default.</p>
  		    </li>
 
             <!--- L2 -->
  			<li>CPU Core/Cache Current Limit Max
- 	     	<p>In the BIOS set "CPU Core/Cache Current Limit Max" to "307"
+ 	     	<p>In the BIOS set "CPU Core/Cache Current Limit Max" to "307".
 			</p>
  		    </li>
         </ol>
@@ -332,12 +339,6 @@
 		<p class="TitleList2Blue">More Windows Settings (added after benchmark)</p>
 		<p>I explicitly note here that these changes were done after running the benchmark so that if something degraded... </p>
         <ol>
-            <!--- L2 -->
- 			<li>No Antivirus
- 	     	<p>Don't install No 3rd party Antivirus, use the built in WIndows Security,
-			<br>it is assumed ot be good enough and specifically it knows how to handle DevDrive (see below).</p>
- 		    </li>
-
             <!--- L2 -->
  			<li>Notifications
  	     	<p>System -> Notifications -> Additional settings uncheck all three.</p>
@@ -369,14 +370,15 @@
  		    </li>
 
             <!--- L2 -->
- 			<li> Nvidia power management mode
- 	     	<p>Set Nvidia power management for performance - only for our running tools,
-			<br>set it for VSCode, Python, Ollama, and more if needed (so, it can be set only the tool is installed..).
-			<br>Right click on the Desktop and open NVIDIA Control Panel,
-			<br>go to "Manage 3D settings" -> "Program Settings tab" -> "Add",
-			<br>since they are installed on D: we need to "Browse" to D:\Tools\VSCode\Microsoft VS Code,
-			<br>choose code.exe,
-			<br>scroll down to "Power management mode" and set it to "Prefer maximum performance" and "Apply"</p>
+ 			<li>Nvidia Power Management mode
+ 	     	<p>Actually, this can be done after our environment tools are installed (or a tool added).
+			<br>Set Nvidia power management for performance - but only for our running tools (not "Global"),
+			<br>set it for VSCode, Python, Ollama, and more of our tools if needed.
+			<br>Right click on the Desktop and open "NVIDIA Control Panel",
+			<br>go to "Manage 3D settings" and "Program Settings" tab and "Add".
+			<br>Since our tools installed on D:\ we need to, for example,
+			<br>"Browse" to "D:\Tools\VSCode\Microsoft VS Code" and choose "code.exe",
+			<br>scroll down to "Power management mode" and set it to "Prefer maximum performance" and "Apply".</p>
     	    <p><img src="images/NvidiaPower.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
  		    </li>
 
@@ -395,20 +397,20 @@
 		<li>
 		<!--- Additional not Settings-->	
 		<p class="TitleList2Blue">Additional not Settings</p>
-		<p>These are settings that I decide not to do, at least for now,
-		<br>Further optimizations can be done when needed.</p>
+		<p>These are settings that I decide not to do, at least for now.
+		<br>Can be done when needed.</p>
         <ol>
             <!--- L2 -->
  			<li>VBS and HVCI
  	     	<p>Disabling VBS and HVCI gives extra performance at the cost of security.
-			<br>Performance is important, but these will not make much difference since the major work of LLM Training is done on the GPU.
-		    <br>So for now they are kept enabled.
+			<br>Performance is important, but these will not make much difference since the major work of LLM Training is done on the GPU,
+		    <br>so for now they are kept enabled.
 			<br>Consider disabling them during training, or in a secured environment Workstation.</p>
  		    </li>
 
             <!--- L2 -->
  			<li>ASUS GPU Tweak III / Overclocking
- 	     	<p>Will make the GPU run faster but at the cost pf stability - that is wear of the system, might crash and (so been said) might cause running errors.
+ 	     	<p>This will make the GPU run faster but at the cost of stability - wear of the system, might crash and (so been said) might cause running errors.
 			<br>Probably keep it disabled, at least for now.</p>
  		    </li>
 
@@ -438,8 +440,8 @@
 			<br>click "Advanced storage settings",
 			<br>click "Disks & volumes",
 			<br>click "Create Dev Drive",
-			<br>Choose "Create new VHD",
-			<br>Name it "Development",
+			<br>choose "Create new VHD",
+			<br>name it "Development",
 			<br>set the location to "C:\Volumes",
 			<br>set size to 200,
 			<br>choose "VHDX",
@@ -451,7 +453,7 @@
  	     	<p>Open Terminal as administrator, 
 			<br>type 'fsutil devdrv query D:",
 			<br>you can see that Windows Defender Filter is treating this drive as trusted,
-			<br>and now anything that is there will run faster.</p>
+			<br>so now anything that is there will run faster.</p>
     	    <p><img src="images/DevDrive1.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
 			</li>
 
@@ -463,7 +465,7 @@
 
             <!--- L2 -->
  			<li> Folders
- 	     	<p>This is the basic folders organization that i created there (for now).</p>
+ 	     	<p>This is the basic folders organization that I created there (for now).</p>
     	    <p><img src="images/DevDrive3.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
 			</li>
         </ol>
@@ -511,7 +513,7 @@
                 <!--- L3 -->
 				<li>Right click on the VS Code shortcut on the desktop -> Properties, change "Target" to: 
 				<br>"D:\Tools\VSCode\Microsoft VS Code\Code.exe" --extensions-dir "D:\Tools\VSCode\extensions",
-				<br>note that you added to the string that was already there the second part of extensions-dir,
+				<br>note that you added to the string that was already there the second part of extensions-dir...,
 				<br>note that the quotations should be there<p>
     	        <p><img src="images/VSCodeExt.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
 				</li>
@@ -531,11 +533,6 @@
 				</li>
 			</ol>
  		    </li>
-
-            <!--- L2 -->
- 			<li>GitHub Copilot on Visual Studio Code
- 	     	<p>You can find it in "AI Training - Development Tools" page.</p>
- 		    </li>
         </ol>
         </li>
 
@@ -547,7 +544,7 @@
             <!--- L2 -->
  			<li>Git Repositories and GitHub
  	     	<p>I already had them ready at this point, so it is not covered here,
-	     	<br>you can find it in "AI Training - Development Tools" page.</p>
+	     	<br>you can find installation details in "AI Education - Development Tools" page.</p>
 			</p>
  		    </li>
 
@@ -593,7 +590,7 @@
             <!--- L2 -->
  			<li>Install Ollama
  	     	<p>Download and install Ollama,
-		    <br>and don't forget to add it in Nvidia power mode (see above).</p>
+		    <br>and don't forget to add it in "Nvidia Power Management" (see above).</p>
  		    </li>
 
             <!--- L2 -->
@@ -609,10 +606,10 @@
 		<p class="TitleList2Blue">Python Virtual Environment</p>
         <ol>
             <!--- L2 -->
- 			<li> Create Virtual environment
+ 			<li> Create Virtual Environment
             <ol>
                 <!--- L3 -->
-                <li>Open Terminal inside VSCode with your project open (it will open at your project location)
+                <li>Inside VSCode, with your project open, open "View -> Terminal" (it will open at your project location)
 				</li>
 
                 <!--- L3 -->
@@ -626,7 +623,7 @@
 
                 <!--- L3 -->
 				<li>Type: .\.venv\Scripts\Activate.ps1
-                <br>now you can see in the terminal that the line starts with green .venv
+                <br>now you can see in the terminal that the line starts with green (.venv)
    	            <p><img src="images/Venv1.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
 				</li>
 			</ol>
@@ -653,9 +650,9 @@
 
                 <!--- L3 -->
 				<li>Open Terminal in the location of your project,
-				<br>make sure you are in green .venv or activate it,
+				<br>make sure you are in green (.venv) or activate it,
                 <br>then type: pip freeze > requirements.txt
-				<br>do it every time you add a new package to your project (helpful when moving to other computers).
+				<br>do it every time you add a new package to your project (will be helpful on moving to other computers).
    	            <p><img src="images/PipFreeze.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p> 
 				</li>
 
@@ -677,15 +674,15 @@
         <ol>
             <!--- L2 -->
 			<li>Terminal Run
-            <p>You can run it from the Terminal (for a quick test).</p>
+            <p>You can run your Python project from the Terminal (for a quick test).</p>
    	        <p><img src="images/TerminalRun1.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
 			</li>
 
             <!--- L2 -->
  			<li>GPU memory
  	     	<p>From the Terminal run: nvidia-smi
-			<br>with application running - and running Ollama,
-			<br>you can see that 4.9 GB of Ollama is loaded into the 16GB of the 5070 TU card.</p>
+			<br>with the Python project that is running Ollama,
+			<br>you can see that the 4.9GB of Ollama is loaded into the 16GB of the 5070 Ti card.</p>
    	        <p><img src="images/NvidiaMsi.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
  		    </li>
 
@@ -714,7 +711,7 @@
 		<p class="TitleList2Blue">Workstation</p>
         <ol>
             <!--- L2 -->
-			<li> The PC that was used in this list
+			<li> The PC that was used in this setup
 			<p>Intel Core i7-14700 up to 5.40GHz 33MB Cache Raptor Lake Tray
 			<br>ASUS PRIME B760-PLUS Intel LGA1700 B760 DDR5
 			<br>CORSAIR NAUTILUS 360 RS
