@@ -436,7 +436,7 @@
         <ol>
             <!--- L2 -->
  			<li>Create Dev Drive
- 	     	<p>System -> Storage,
+ 	     	<p>Settings -> System -> Storage,
 			<br>click "Advanced storage settings",
 			<br>click "Disks & volumes",
 			<br>click "Create Dev Drive",
@@ -469,6 +469,15 @@
  			<li> Folders
  	     	<p>This is the basic folders organization that I created there (for now).</p>
     	    <p><img src="images/DevDrive3.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
+			</li>
+
+            <!--- L2 -->
+ 			<li> If you devDrive is lost
+ 	     	<p>Settings -> System -> Storage,
+			<br>click "Advanced storage settings",
+			<br>click "Disks & volumes",
+			<br>click "Attach VHD",
+			<br>OK".</p>
 			</li>
         </ol>
         </li>
@@ -731,6 +740,22 @@
 			<br><code>[Environment]::SetEnvironmentVariable("OLLAMA_CUDA_DEVICES", "0", "User")</code></p>
    	        <p><img src="images/CudaSelect.png" class="zoomable" ondblclick="this.classList.toggle('full')"></p>
 			</li>
+        </ol>
+        </li>
+
+        <!--- L1 -->
+		<li>
+		<!--- Computers inference speed -->	
+		<p class="TitleList2Blue">Computers Inference Speed</p>
+        <ol>
+            <!--- L2 -->
+ 			<li>To compare computers Inference speed test
+ 	     	<p>Download and install Ollama,
+			<br>from the Terminal run: <code>ollama list</code>
+			<br>if the model is missing then: <code>ollama run llama3.1:8b</code>
+			<br>now the test: <code>echo "Write a short story about a robot learning to love." | ollama run llama3.1:8b --verbose</code>
+			<br>now again (to get the duration when the Model is already loaded).</p>
+ 		    </li>
         </ol>
         </li>
     </ol>
